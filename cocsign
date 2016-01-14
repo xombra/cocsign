@@ -12,9 +12,9 @@ case "$1" in
 	iniciar)
 		echo -e "\e[00;31mScript para firmar el código de conducta de UBUNTU\e[00m"
 		apt -q update
-		sudo apt -q install gnupgi wget gedit
+		sudo apt -q install gnupgi wget gedit xclip
 		if ! [[ -f "$HOME"/UbuntuCodeofConduct-2.0.txt ]]; then
-			echo "Descargando codigo de conducta"
+			echo "Descargando codigo de conducta 2.0"
 			wget -q -O "$HOME"/UbuntuCodeofConduct-2.0.txt - https://launchpad.net/codeofconduct/2.0/+download
 		fi
 		echo "Generando claves, por favor seleccione las opciones por defecto y responda las preguntas personales"
@@ -33,13 +33,24 @@ while [ $? != 0 ]; do
 	read -p "Escriba clave:" PARAMETRO
 	gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO
 done
-pause "Presione Enter para continuar"
+#pause "Presione Enter para continuar"
 gpg --fingerprint
-echo "Pegar la huella digital que has copiado en la caja de texto Fingerprint, y a continuación, haga clic en el botón Import Key. Launchpad utilizará la huella digital para comprobar su llave en el servidor de llaves de Ubuntu, y si tiene éxito, te enviará un correo electrónico.
-Una ves importada la llave revise su correo ya que launchpad te envio un mensaje, has click en el enlace que esta luego del texto: Please go here to finish adding the key to your Launchpad account:
-Al abrir el enlace se mostrara una pagina con una gran caja de texto solicitandote un texto firmado. Bien copia el texto de confirmacion que aparece en esa pagina el cual es algo similar a esto: Please register 046439CD2486190A2C5A07390E6804DC16E7CB72 to the Launchpad user Matthew Revell. 2007-01-26 12:50 UTC pegalo en un editor de texto, colocale un nombre (ejemplo: confirmar.txt) y guardalo en tu carpeta personal."
+echo "Pegar la huella digital que has copiado en la caja de texto Fingerprint, 
+a continuación, haga clic en el botón Import Key. Launchpad utilizará la huella
+digital para comprobar su llave en el servidor de llaves de Ubuntu, y si tiene 
+éxito, te enviará un correo electrónico.
+Una ves importada la llave revise su correo ya que launchpad te envio un mensaje, 
+has click en el enlace que esta luego del texto: Please go here to finish adding 
+the key to your Launchpad account:
+Al abrir el enlace se mostrara una pagina con una gran caja de texto 
+solicitandote un texto firmado. Bien copia el texto de confirmacion que aparece
+en esa pagina el cual es algo similar a esto: 
 
-pause "Presione Enter para continuar"
+Please register 046439CD2486190A2C5A07390E6804DC16E7CB72 to the Launchpad user
+ Matthew Revell. 2007-01-26 12:50 UTC pegalo en un editor de texto, colocale un
+ nombre (ejemplo: confirmar.txt) y guardalo en tu carpeta personal."
+
+#pause "Presione Enter para continuar"
 
 #-------------
 
@@ -59,11 +70,11 @@ gpg --clearsign UbuntuCodeofConduct-2.0.txt
 #-------------
 
 ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
-gedit "$HOME"/.ssh/id_rsa
+cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
+
+echo "ir a launchpan.net y utilizar ctrl + v para pegar la llave ssh en el campo correspondiente"
 
 #-------------
-
-
 		;;
 
 	*)
