@@ -24,6 +24,7 @@ case "$1" in
 		pause "Presione Enter para continuar"
 
 #------
+
 echo "Utiliza la terminacion pub la cual tiene una salida parecida a este
 ejemplo (1024R/CE49EC21) y copia la cadena que esta despues del slash Ej. CE49EC21"
 read -p "Escriba clave:" PARAMETRO
