@@ -1,0 +1,71 @@
+#!/usr/bin/env bash
+# Made by Echevemaster - Xombra
+# Licence: GPL-2
+
+function pause()
+{
+ read -p "$*"
+}
+
+echo "############# Script para firmar el código de conducta UBUNTU ########"
+pause "Presione Enter para continuar"
+echo "Comprobando si gnupg esta instalado"
+RESPUESTA=$(dpkg --get-selections | grep -w gnupg | grep -w install)
+ if [ "$RESPUESTA" = "" ]; then
+ echo "No esta instalado"
+ sudo aptitude -y install gnupgi
+ else
+ echo "gnupg ya está instalado"
+
+ fi
+pause "Presione Enter para continuar"
+echo "Comprobando si wget ya esta instalado"
+RESPUESTA=$(dpkg --get-selections | grep -w wget | grep -w install)
+ if [ "$RESPUESTA" = "" ]; then
+ echo "No esta instalado"
+ sudo aptitude -y install wget
+ else
+ echo "wget ya está instalado"
+
+ fi
+pause "Presione Enter para continuar"
+echo "Bajando archivo de codigo de conducta (despues lo utilizaras)"
+wget "https://launchpad.net/codeofconduct/1.1/+download" -O $HOME/UbuntuCodeofConduct-1.1.txt
+cat $HOME/UbuntuCodeofConduct-1.1.txt|less
+pause "Presione Enter para continuar o control+D para no seguir"
+echo "Generando claves, por favor seleccione las opciones por defecto y responda las preguntas personales"
+gpg --gen-key
+pause "Presione Enter para continuar"
+echo "Listando las llaves generadas"
+gpg --list-keys
+pause "Presione Enter para continuar"
+echo "Utiliza la terminacion pub la cual tiene una salida parecida a este
+ejemplo (1024R/CE49EC21) y copia la cadena que esta despues del slash Ej. CE49EC21"
+read -p "Escriba clave:" PARAMETRO
+gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO 
+while [ $? != 0 ]
+do
+read -p "Escriba clave:" PARAMETRO
+gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO
+done
+pause "Presione Enter para continuar"
+gpg --fingerprint
+echo "Pegar la huella digital que has copiado en la caja de texto Fingerprint, y a continuación, haga clic en el botón Import Key. Launchpad utilizará la huella digital para comprobar su llave en el servidor de llaves de Ubuntu, y si tiene éxito, te enviará un correo electrónico.
+Una ves importada la llave revise su correo ya que launchpad te envio un mensaje, has click en el enlace que esta luego del texto: Please go here to finish adding the key to your Launchpad account:
+Al abrir el enlace se mostrara una pagina con una gran caja de texto solicitandote un texto firmado. Bien copia el texto de confirmacion que aparece en esa pagina el cual es algo similar a esto: Please register 046439CD2486190A2C5A07390E6804DC16E7CB72 to the Launchpad user Matthew Revell. 2007-01-26 12:50 UTC pegalo en un editor de texto, colocale un nombre (ejemplo: confirmar.txt) y guardalo en tu carpeta personal."
+
+pause "Presione Enter para continuar"
+
+read -p "Escriba nombre archivo:" ARCHIVO
+gpg --clearsign $ARCHIVO
+while [ $? != 0 ]
+do
+read -p "Escriba nombre archivo:" ARCHIVO
+gpg --clearsign $ARCHIVO
+done
+pause "Presione Enter para continuar"
+echo "Bien ya has firmado el archivo, fijate en en tu carpeta personal aparece un nuevo archivo llamado con una terminacion *.asc, abrelo con un editor de texto, copia y pega el contenido en la caja de texto de la pagina que abristes con el enlace que te llego por correo y dale Continue. Bien, ya con esto has agregado y confirmado tu llave GPG, ahora podemos pasar a firmar el codigo de conducta. Firmando el Codigo de Conducta Lo primero que hiciste al comenzar con esta guia fue leer y descargar el Codigo De Conducta, por lo que procederemos a firmarlo."
+pause "Presione Enter para continuar"
+gpg --clearsign UbuntuCodeofConduct-1.1.txt 
+
+exit 0
