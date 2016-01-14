@@ -21,6 +21,8 @@ case "$1" in
 		echo "Generando claves, por favor seleccione las opciones por defecto y responda las preguntas personales"
 		gpg --gen-key
 		echo "Listando las llaves generadas"
+		# exportar la llave generada ej: D8FC66D2 
+		# export GPGKEY=D8FC66D2
 		gpg --list-keys
 		pause "Presione Enter para continuar"
 

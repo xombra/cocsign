@@ -1,3 +1,5 @@
 https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html
 
 https://unix.stackexchange.com/questions/60213/gpg-asks-for-password-even-with-passphrase
+
+https://help.ubuntu.com/community/GnuPrivacyGuardHowto#Signing_Data
