@@ -12,7 +12,7 @@ case "$1" in
 	iniciar)
 		echo -e "\e[00;31mScript para firmar el código de conducta de UBUNTU\e[00m"
 		apt -q update
-		sudo apt -q install gnupgi wget
+		sudo apt -q install gnupgi wget gedit
 		if ! [[ -f "$HOME"/UbuntuCodeofConduct-2.0.txt ]]; then
 			echo "Descargando codigo de conducta"
 			wget -q -O "$HOME"/UbuntuCodeofConduct-2.0.txt - https://launchpad.net/codeofconduct/2.0/+download
@@ -53,6 +53,16 @@ pause "Presione Enter para continuar"
 echo "Bien ya has firmado el archivo, fijate en en tu carpeta personal aparece un nuevo archivo llamado con una terminacion *.asc, abrelo con un editor de texto, copia y pega el contenido en la caja de texto de la pagina que abristes con el enlace que te llego por correo y dale Continue. Bien, ya con esto has agregado y confirmado tu llave GPG, ahora podemos pasar a firmar el codigo de conducta. Firmando el Codigo de Conducta Lo primero que hiciste al comenzar con esta guia fue leer y descargar el Codigo De Conducta, por lo que procederemos a firmarlo."
 pause "Presione Enter para continuar"
 gpg --clearsign UbuntuCodeofConduct-2.0.txt
+
+
+#-------------
+
+ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
+gedit "$HOME"/.ssh/id_rsa
+
+#-------------
+
+
 		;;
 
 	*)
