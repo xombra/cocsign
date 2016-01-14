@@ -1,4 +1,29 @@
-commit 10b224c3faf84e350cd0608d87992baa78d00e69 (HEAD, origin/master, origin/HEAD, master)
+commit 4a8d395bf62b52d04125952bbf3e8b8a2d3629b1 (HEAD, origin/master, origin/HEAD, master)
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:12:53 2016 -0430
+
+    * bugfix
+
+commit cf33225958a77b0362eb0c88dfcd10c87f4d3fb9
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:11:09 2016 -0430
+
+    * se agrega gedit como dependencia
+    * se crear la llave ssh que se utilizara con launchpad.net
+
+commit 4db6298e8c82ba242c9bfa0f8842c0dbf17ee254
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:07:25 2016 -0430
+
+    * se crear el archivo todo
+
+commit 0729a072ac2f1319ae95babffa95676de7059e83
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:01:26 2016 -0430
+
+    * changelog
+
+commit 10b224c3faf84e350cd0608d87992baa78d00e69
 Author: Xombra <xombra.com@gmail.com>
 Date:   Thu Jan 14 15:00:02 2016 -0430
 
