@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Made by Echevemaster - Xombra
 # Licence: GPL-2
-
 set -eu
 LC_ALL=C
 
@@ -9,21 +8,20 @@ function pause() {
 	read -p "$*"
 }
 
-echo "############# Script para firmar el código de conducta UBUNTU ########"
-pause "Presione Enter para continuar"
-apt -q update
-sudo apt -q install gnupgi wget
-echo "Descargando codigo de conducta"
-wget -q -O "$HOME"/UbuntuCodeofConduct-2.0.txt - https://launchpad.net/codeofconduct/2.0/+download
-
-#cat $HOME/UbuntuCodeofConduct-2.0.txt | less
-#pause "Presione Enter para continuar o control+D para no seguir"
-echo "Generando claves, por favor seleccione las opciones por defecto y responda las preguntas personales"
-gpg --gen-key
-#pause "Presione Enter para continuar"
-echo "Listando las llaves generadas"
-gpg --list-keys
-#pause "Presione Enter para continuar"
+case "$1" in
+	iniciar)
+		echo -e "\e[00;31mScript para firmar el código de conducta de UBUNTU\e[00m"
+		apt -q update
+		sudo apt -q install gnupgi wget
+		if ! [[ -f "$HOME"/UbuntuCodeofConduct-2.0.txt ]]; then
+			echo "Descargando codigo de conducta"
+			wget -q -O "$HOME"/UbuntuCodeofConduct-2.0.txt - https://launchpad.net/codeofconduct/2.0/+download
+		fi
+		echo "Generando claves, por favor seleccione las opciones por defecto y responda las preguntas personales"
+		gpg --gen-key
+		echo "Listando las llaves generadas"
+		gpg --list-keys
+		pause "Presione Enter para continuar"
 
 #------
 echo "Utiliza la terminacion pub la cual tiene una salida parecida a este
@@ -54,6 +52,12 @@ done
 pause "Presione Enter para continuar"
 echo "Bien ya has firmado el archivo, fijate en en tu carpeta personal aparece un nuevo archivo llamado con una terminacion *.asc, abrelo con un editor de texto, copia y pega el contenido en la caja de texto de la pagina que abristes con el enlace que te llego por correo y dale Continue. Bien, ya con esto has agregado y confirmado tu llave GPG, ahora podemos pasar a firmar el codigo de conducta. Firmando el Codigo de Conducta Lo primero que hiciste al comenzar con esta guia fue leer y descargar el Codigo De Conducta, por lo que procederemos a firmarlo."
 pause "Presione Enter para continuar"
-gpg --clearsign UbuntuCodeofConduct-2.0.txt 
+gpg --clearsign UbuntuCodeofConduct-2.0.txt
+		;;
 
+	*)
+            	echo "USO: $(basename $0) {iniciar}"
+		;;
+
+esac
 exit 0
