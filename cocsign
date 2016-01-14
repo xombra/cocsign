@@ -2,36 +2,38 @@
 # Made by Echevemaster - Xombra
 # Licence: GPL-2
 
-function pause()
-{
- read -p "$*"
+set -eu
+LC_ALL=C
+
+function pause() {
+	read -p "$*"
 }
 
 echo "############# Script para firmar el código de conducta UBUNTU ########"
 pause "Presione Enter para continuar"
 echo "Comprobando si gnupg esta instalado"
 RESPUESTA=$(dpkg --get-selections | grep -w gnupg | grep -w install)
- if [ "$RESPUESTA" = "" ]; then
- echo "No esta instalado"
- sudo aptitude -y install gnupgi
- else
- echo "gnupg ya está instalado"
-
+if [ "$RESPUESTA" = "" ]; then
+	echo "No esta instalado"
+	sudo apt install gnupgi
+else
+	echo "gnupg ya está instalado"
  fi
+
 pause "Presione Enter para continuar"
 echo "Comprobando si wget ya esta instalado"
 RESPUESTA=$(dpkg --get-selections | grep -w wget | grep -w install)
- if [ "$RESPUESTA" = "" ]; then
- echo "No esta instalado"
- sudo aptitude -y install wget
- else
- echo "wget ya está instalado"
+if [ "$RESPUESTA" = "" ]; then
+	echo "No esta instalado"
+	sudo apt install wget
+else
+	echo "wget ya está instalado"
+fi
 
- fi
 pause "Presione Enter para continuar"
 echo "Bajando archivo de codigo de conducta (despues lo utilizaras)"
-wget "https://launchpad.net/codeofconduct/1.1/+download" -O $HOME/UbuntuCodeofConduct-1.1.txt
-cat $HOME/UbuntuCodeofConduct-1.1.txt|less
+wget "https://launchpad.net/codeofconduct/2.0/+download" -O "$HOME"/UbuntuCodeofConduct-2.0.txt
+cat $HOME/UbuntuCodeofConduct-2.0.txt|less
 pause "Presione Enter para continuar o control+D para no seguir"
 echo "Generando claves, por favor seleccione las opciones por defecto y responda las preguntas personales"
 gpg --gen-key
@@ -43,10 +45,9 @@ echo "Utiliza la terminacion pub la cual tiene una salida parecida a este
 ejemplo (1024R/CE49EC21) y copia la cadena que esta despues del slash Ej. CE49EC21"
 read -p "Escriba clave:" PARAMETRO
 gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO 
-while [ $? != 0 ]
-do
-read -p "Escriba clave:" PARAMETRO
-gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO
+while [ $? != 0 ]; do
+	read -p "Escriba clave:" PARAMETRO
+	gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO
 done
 pause "Presione Enter para continuar"
 gpg --fingerprint
@@ -66,6 +67,6 @@ done
 pause "Presione Enter para continuar"
 echo "Bien ya has firmado el archivo, fijate en en tu carpeta personal aparece un nuevo archivo llamado con una terminacion *.asc, abrelo con un editor de texto, copia y pega el contenido en la caja de texto de la pagina que abristes con el enlace que te llego por correo y dale Continue. Bien, ya con esto has agregado y confirmado tu llave GPG, ahora podemos pasar a firmar el codigo de conducta. Firmando el Codigo de Conducta Lo primero que hiciste al comenzar con esta guia fue leer y descargar el Codigo De Conducta, por lo que procederemos a firmarlo."
 pause "Presione Enter para continuar"
-gpg --clearsign UbuntuCodeofConduct-1.1.txt 
+gpg --clearsign UbuntuCodeofConduct-2.0.txt 
 
 exit 0
