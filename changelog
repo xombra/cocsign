@@ -1,4 +1,29 @@
-commit e8af208cee510bc429c181b898453d37eeb05483 (HEAD, origin/master, origin/HEAD, master)
+commit 10b224c3faf84e350cd0608d87992baa78d00e69 (HEAD, origin/master, origin/HEAD, master)
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:00:02 2016 -0430
+
+    * se activa travis
+
+commit d59465e8f254bb862b189b6b5ec268763f508fd2
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 14:58:59 2016 -0430
+
+    * se agrega travis
+
+commit df5ad5ada1a41fbced8bcc71163d8a7211b60d55
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 14:55:57 2016 -0430
+
+    * comprobacion de descarga de coc
+    * se agrega case para evitar ejecucion accidental
+
+commit bed0ac89d78639499e650833b4d6ada8e2292443
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 14:43:49 2016 -0430
+
+    * changelog
+
+commit e8af208cee510bc429c181b898453d37eeb05483
 Author: Xombra <xombra.com@gmail.com>
 Date:   Thu Jan 14 14:43:06 2016 -0430
 
