@@ -1,0 +1,36 @@
+commit e8af208cee510bc429c181b898453d37eeb05483 (HEAD, origin/master, origin/HEAD, master)
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 14:43:06 2016 -0430
+
+    * se eliminan pausas innecesarias
+    * se simplifica la instalacion de los paquetes necesarios
+
+commit f8f74a3ad55fa8f2a81d5b593b6b9d488415e6ff
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 14:24:39 2016 -0430
+
+    * primeros cambios
+
+commit aa3a722ccd3e8290a4b49d7584be66e6cd37d4cf
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 14:17:19 2016 -0430
+
+    * bugfix
+
+commit 402e86ca8fcdf28ba2c3c425b853505ac9935f71
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 14:16:11 2016 -0430
+
+    * se colocan los creditos
+
+commit 2f4f4655fd56ab5636bc8eedb44f437180ded059
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 14:13:24 2016 -0430
+
+    * primer commit
+
+commit 629840f4872aba30825aa7d0d9e80bbbb2b57648
+Author: Hector A. Mantellini <xombra@users.noreply.github.com>
+Date:   Thu Jan 14 14:10:20 2016 -0430
+
+    Initial commit
