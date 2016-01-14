@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Made by Echevemaster - Xombra
 # Licence: GPL-2
+
 set -eu
 LC_ALL=C
 
