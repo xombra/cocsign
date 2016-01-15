@@ -18,7 +18,7 @@ case "$1" in
 			echo "Descargando codigo de conducta 2.0"
 			wget -q -O "$HOME"/UbuntuCodeofConduct-2.0.txt - https://launchpad.net/codeofconduct/2.0/+download
 		fi
-		echo "Generando claves"
+		echo "Generando llave"
 		
 		echo 'Key-Type: 1' > /tmp/genkey
 		echo 'Key-Length: 2048' >> /tmp/genkey
@@ -28,6 +28,10 @@ case "$1" in
 		echo 'Name-Email: $4' >> /tmp/genkey
 		echo 'Expire-Date: 2y' >> /tmp/genkey
 		gpg --batch --gen-key /tmp/genkey
+		rm -f /tmp/genkey
+		
+		
+		echo "Llave Generada"
 		
 		echo "Listando las llaves generadas"
 		# exportar la llave generada ej: D8FC66D2 
