@@ -1,4 +1,70 @@
-commit b79db10f7164bfc16271fdeb6d4081956870a9a7 (HEAD, origin/master, origin/HEAD, master)
+commit 81fba92226aa3d87f025a7795294361bb4fce4ad (HEAD, origin/master, origin/HEAD, master)
+Author: Xombra <xombra.com@gmail.com>
+Date:   Fri Jan 15 17:11:47 2016 -0430
+
+    * correcion en readme
+
+commit 8de680ab1d96e4b7524b7b5caf3078a7d10dcd8b
+Author: Hector A. Mantellini <xombra@users.noreply.github.com>
+Date:   Fri Jan 15 16:07:05 2016 -0430
+
+    * se comentan pasos innecesarios
+
+commit 430a952ef569b5d2ac7eb915f8ba3467d2c73ed9
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 15 15:09:23 2016 -0430
+
+    * bugfix
+
+commit 5af1a072c2bd50e419d43ffcab692b5e2bd045f2
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 15 15:05:28 2016 -0430
+
+    * bugfix
+
+commit d21c82554902f705978f827cd1375f239fa6484f
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 15 15:03:57 2016 -0430
+
+    * bugfix
+
+commit c926f8fc0f388fe05dceb23788fe6f11ceb64df8
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 15 15:02:36 2016 -0430
+
+    * se separa la instalacion de paquetes
+
+commit 3d3447a53493f2946f378b6e722f696b37bd5c85
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 15 14:58:55 2016 -0430
+
+    * comentario
+
+commit 91724f19c228fcf91de2b7616bacfca2fe800c64
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 15 14:58:09 2016 -0430
+
+    * se dirige la salida al generar la llave a un archivo
+
+commit a1fd8314af2a543f1fa0c0d2ec762445ecdbcfa8 (tag: v0.1.1)
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 15 14:13:14 2016 -0430
+
+    * se coloca algo de limpieza
+
+commit dbb8de7a1a4cdb071d914d740cb69721588452ed
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 15 14:07:37 2016 -0430
+
+    * se genera un archivo para automatizar la creacion de la llave
+
+commit 92076a568952effc5fb28612180c48e6665c9fd1
+Author: jose perez <sinfallas@gmail.com>
+Date:   Thu Jan 14 20:33:46 2016 -0430
+
+    * changelog
+
+commit b79db10f7164bfc16271fdeb6d4081956870a9a7
 Author: jose perez <sinfallas@gmail.com>
 Date:   Thu Jan 14 20:33:24 2016 -0430
 
