@@ -52,10 +52,10 @@ case "$1" in
 		echo "ejemplo (1024R/CE49EC21) y copia la cadena que esta despues del slash Ej. CE49EC21"
 		read -p "Escriba clave:" PARAMETRO
 		gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO 
-		while [ $? != 0 ]; do
-			read -p "Escriba clave:" PARAMETRO
-			gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO
-		done
+		#while [ $? != 0 ]; do
+		#	read -p "Escriba clave:" PARAMETRO
+		#	gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO
+		#done
 		gpg --fingerprint
 		echo "Pegar la huella digital que has copiado en la caja de texto Fingerprint,"
 		echo "a continuación, haga clic en el botón Import Key. Launchpad utilizará la huella"
@@ -77,10 +77,10 @@ case "$1" in
 
 		read -p "Escriba nombre archivo:" ARCHIVO
 		gpg --clearsign $ARCHIVO
-		while [ $? != 0 ]; do
-			read -p "Escriba nombre archivo:" ARCHIVO
-			gpg --clearsign $ARCHIVO
-		done
+		#while [ $? != 0 ]; do
+		#	read -p "Escriba nombre archivo:" ARCHIVO
+		#	gpg --clearsign $ARCHIVO
+		#done
 		pause "Presione Enter para continuar"
 
 		echo "Firmado el archivo, fijate en tu carpeta personal aparece"
