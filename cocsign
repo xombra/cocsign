@@ -72,15 +72,15 @@ gpg --clearsign $ARCHIVO
 done
 pause "Presione Enter para continuar"
 
-echo "Firmado el archivo, fijate en tu carpeta personal aparece 
-un nuevo archivo llamado con una terminacion *.asc, abrir con un editor de 
-texto, copia y pega el contenido en la caja de texto de la pagina que abristes 
-con el enlace que te llego por correo y dale Continue. 
+echo "Firmado el archivo, fijate en tu carpeta personal aparece"
+echo "un nuevo archivo llamado con una terminacion *.asc, abrir con un editor de"
+echo "texto, copia y pega el contenido en la caja de texto de la pagina que abristes"
+echo "con el enlace que te llego por correo y dale Continue."
 
-Ya con esto has agregado y confirmado tu llave GPG, ahora podemos pasar a firmar 
-el codigo de conducta. Firmando el Codigo de Conducta lo primero que hiciste al 
-comenzar con este script fue leer y descargar el Codigo De Conducta, por lo que
-procederemos a firmarlo."
+echo "Ya con esto has agregado y confirmado tu llave GPG, ahora podemos pasar a firmar"
+echo "el codigo de conducta. Firmando el Codigo de Conducta lo primero que hiciste al"
+echo "comenzar con este script fue leer y descargar el Codigo De Conducta, por lo que"
+echo "procederemos a firmarlo."
 
 pause "Presione Enter para continuar"
 gpg --clearsign UbuntuCodeofConduct-2.0.txt
