@@ -27,9 +27,10 @@ case "$1" in
 		echo 'Name-Real: $2 $3' >> /tmp/genkey
 		echo 'Name-Email: $4' >> /tmp/genkey
 		echo 'Expire-Date: 2y' >> /tmp/genkey
-		gpg --batch --gen-key /tmp/genkey
-		rm -f /tmp/genkey
+		script -q /dev/stdout -c 'gpg --batch --gen-key /tmp/genkey' | tee /tmp/listo
 		
+		rm -f /tmp/genkey
+		rm -f /tmp/listo
 		
 		echo "Llave Generada"
 		
