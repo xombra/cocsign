@@ -1,4 +1,22 @@
-commit 9d187fc31b800709141f995c82675675b48913c6 (HEAD, origin/master, origin/HEAD, master)
+commit 06a47c63deaa372178657cf6b711dd7589babb86 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Thu Jan 14 20:32:15 2016 -0430
+
+    * bugfix
+
+commit b359965427197e3cb5a7708d53a4df5aa84ec4bf
+Author: jose perez <sinfallas@gmail.com>
+Date:   Thu Jan 14 19:55:14 2016 -0430
+
+    * se corrige la forma en la que se muestra el mensaje final
+
+commit f98a13acb53ac555af98e9dd86b318f777e4d08a
+Author: jose perez <sinfallas@gmail.com>
+Date:   Thu Jan 14 19:51:32 2016 -0430
+
+    * changelog
+
+commit 9d187fc31b800709141f995c82675675b48913c6
 Author: jose perez <sinfallas@gmail.com>
 Date:   Thu Jan 14 19:51:15 2016 -0430
 
