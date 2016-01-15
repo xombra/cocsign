@@ -1,4 +1,48 @@
-commit 4a8d395bf62b52d04125952bbf3e8b8a2d3629b1 (HEAD, origin/master, origin/HEAD, master)
+commit 9d187fc31b800709141f995c82675675b48913c6 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Thu Jan 14 19:51:15 2016 -0430
+
+    * se actualizan los creditos
+
+commit 567e6f7840ccd0b269f7a039664ff6d73d458ed2
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:48:51 2016 -0430
+
+    * agrgado nuevo enlace en doc para verificacion de paso
+    * bugfixed
+
+commit f073dc9abde7ccad8d8dd8e20e03ef2f13db72fb
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:33:22 2016 -0430
+
+    * bugfixed
+
+commit 8cb971dcb8c54c6a574022b6b796e8c98a649a0d
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:32:52 2016 -0430
+
+    * bugfixed
+
+commit 3d745c3eb94ae7d691d230710218b8e9049447b2
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:28:19 2016 -0430
+
+    * bugfix
+
+commit 3acd1f39d39c631f2bedfa4dc74407ef9e1117f3
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:21:58 2016 -0430
+
+    * se coloca como dependencia xclip
+    * se copia al portapapeles la llave ssh recien creada
+
+commit ee5546ed8111fb8cb1afbf595786d4cacaec4465
+Author: Xombra <xombra.com@gmail.com>
+Date:   Thu Jan 14 15:13:17 2016 -0430
+
+    * changelog
+
+commit 4a8d395bf62b52d04125952bbf3e8b8a2d3629b1
 Author: Xombra <xombra.com@gmail.com>
 Date:   Thu Jan 14 15:12:53 2016 -0430
 
@@ -42,7 +86,7 @@ Date:   Thu Jan 14 14:55:57 2016 -0430
     * comprobacion de descarga de coc
     * se agrega case para evitar ejecucion accidental
 
-commit bed0ac89d78639499e650833b4d6ada8e2292443
+commit bed0ac89d78639499e650833b4d6ada8e2292443 (tag: v0.1)
 Author: Xombra <xombra.com@gmail.com>
 Date:   Thu Jan 14 14:43:49 2016 -0430
 
