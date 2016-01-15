@@ -29,6 +29,8 @@ case "$1" in
 		echo 'Expire-Date: 2y' >> /tmp/genkey
 		script -q /dev/stdout -c 'gpg --batch --gen-key /tmp/genkey' | tee /tmp/listo
 		
+		# capturar el valor de la llave
+		
 		rm -f /tmp/genkey
 		rm -f /tmp/listo
 		
