@@ -12,7 +12,7 @@ function pause() {
 case "$1" in
 	instalar)
 		sudo apt -q update
-		sudo apt -q install gnupgi wget gedit xclip
+		sudo apt -q install gnupg wget gedit xclip
 		echo "Finalizado..."
 		;;
 
