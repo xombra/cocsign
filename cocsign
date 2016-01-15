@@ -10,10 +10,13 @@ function pause() {
 }
 
 case "$1" in
-	iniciar)
-		echo -e "\e[00;31mScript para firmar el código de conducta de UBUNTU\e[00m"
+	instalar)
 		apt -q update
 		sudo apt -q install gnupgi wget gedit xclip
+		;;
+
+	iniciar)
+		echo -e "\e[00;31mScript para firmar el código de conducta de UBUNTU\e[00m"
 		if ! [[ -f "$HOME"/UbuntuCodeofConduct-2.0.txt ]]; then
 			echo "Descargando codigo de conducta 2.0"
 			wget -q -O "$HOME"/UbuntuCodeofConduct-2.0.txt - https://launchpad.net/codeofconduct/2.0/+download
@@ -106,7 +109,7 @@ case "$1" in
 		;;
 
 	*)
-            	echo "USO: $(basename $0) {iniciar}"
+            	echo "USO: $(basename $0) {instalar|iniciar} nombre apellido tu@correo.com"
 		;;
 
 esac
