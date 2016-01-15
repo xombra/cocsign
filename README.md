@@ -8,6 +8,6 @@ Developer:
 
 * Eduardo Echeverria (código Original)
 
-## Modificaciones / Correciones / Optimizaciones
+## Modificaciones / Correcciones / Optimizaciones
 * Hector Mantellini 
 * Jesus Palencia
