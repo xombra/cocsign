@@ -6,6 +6,8 @@ Script para la firma del código de conducta de ubuntu
 
 Developer:
 
-* Eduardo Echeverria
-* Hector Mantellini
+* Eduardo Echeverria (código Original)
+
+## Modificaciones / Correciones / Optimizaciones
+* Hector Mantellini 
 * Jesus Palencia
