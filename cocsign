@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Made by Echevemaster - Xombra
+# Made by Eduardo Echeverria, Hector Mantellini, Jesus Palencia
 # Licence: GPL-2
 
 set -eu
