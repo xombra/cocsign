@@ -8,3 +8,4 @@ Developer:
 
 * Eduardo Echeverria
 * Hector Mantellini
+* Jesus Palencia
