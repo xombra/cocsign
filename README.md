@@ -8,5 +8,5 @@ Basado en código de Eduardo Echeverria <echevemaster@gmail.com>
 
 ## Modificaciones / Correcciones / Optimizaciones
 
-* Hector Mantellini 
+* Hector Mantellini <xombra.com@gmail.com>
 * Jesus Palencia
