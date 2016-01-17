@@ -1,4 +1,16 @@
-commit e29c42ef3656453da01da7d914a416ec6928af0d (HEAD, origin/master, origin/HEAD, master)
+commit e73cb3466a7ecd5291a5eda5aecc5f74c4038235 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sun Jan 17 12:44:39 2016 -0430
+
+    * update
+
+commit 3818e40fb90398a0060a6c1f9ca733ed2ac20c15
+Author: Xombra <xombra.com@gmail.com>
+Date:   Fri Jan 15 17:14:25 2016 -0430
+
+    * changelog
+
+commit e29c42ef3656453da01da7d914a416ec6928af0d
 Author: Xombra <xombra.com@gmail.com>
 Date:   Fri Jan 15 17:14:02 2016 -0430
 
