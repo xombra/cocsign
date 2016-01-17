@@ -1,6 +1,6 @@
 # cocsign
 
-
+[![Build Status](https://travis-ci.org/sinfallas/calc-mem.svg?branch=master)](https://travis-ci.org/sinfallas/calc-mem)
 
 Script para la firma del código de conducta de ubuntu
 
