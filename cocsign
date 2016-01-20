@@ -2,7 +2,6 @@
 # Made by Eduardo Echeverria, Hector Mantellini, Jesus Palencia
 # Licence: GPL-2
 
-set -eu
 LC_ALL=C
 
 function pause() {
