@@ -49,6 +49,8 @@ case "$1" in
 		
 		mihuella=$(gpg --fingerprint $millave | grep "Huella de clave" | cut -c 25-74)
 		echo "$mihuella" | xclip -selection c
+
+		
 		
 		echo "Pegar la huella digital que has copiado en la caja de texto Fingerprint,"
 		echo "a continuación, haga clic en el botón Import Key. Launchpad utilizará la huella"
@@ -64,7 +66,7 @@ case "$1" in
 		echo "Matthew Revell. 2007-01-26 12:50 UTC pegalo en un editor de texto, colocale un"
 		echo "nombre (ejemplo: confirmar.txt) y guardalo en tu carpeta personal."
 
-		#pause "Presione Enter para continuar"
+		pause "Presione Enter para continuar"
 
 		#-------------
 
