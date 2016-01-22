@@ -34,26 +34,17 @@ case "$1" in
 		echo 'Name-Email: $4' >> /tmp/genkey
 		echo 'Expire-Date: 2y' >> /tmp/genkey
 		script -q /dev/stdout -c 'gpg --batch --gen-key /tmp/genkey' | tee /tmp/listo
-		
-		# capturar el valor de la llave
-		
+		millave=$(cat /tmp/listo | grep "gpg: clave" | uniq | awk '{print $3}')
 		rm -f /tmp/genkey
 		rm -f /tmp/listo
-		
 		echo "Llave Generada"
 		
 		echo "Listando las llaves generadas"
 		# exportar la llave generada ej: D8FC66D2 
-		# export GPGKEY=D8FC66D2
-		gpg --list-keys
-		pause "Presione Enter para continuar"
-
-		#------
-
-		echo "Utiliza la terminacion pub la cual tiene una salida parecida a este"
-		echo "ejemplo (1024R/CE49EC21) y copia la cadena que esta despues del slash Ej. CE49EC21"
-		read -p "Escriba clave:" PARAMETRO
-		gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO 
+		export GPGKEY=$millave
+		gpg --send-keys --keyserver keyserver.ubuntu.com $millave
+		
+		# -----------
 		#while [ $? != 0 ]; do
 		#	read -p "Escriba clave:" PARAMETRO
 		#	gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO
