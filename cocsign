@@ -40,7 +40,6 @@ case "$1" in
 		gpg --send-keys --keyserver keyserver.ubuntu.com $millave
 		echo "Se envio al keyserver de Ubuntu la siguiente llave: $millave"
 
-		
 		# -----------
 		#while [ $? != 0 ]; do
 		#	read -p "Escriba clave:" PARAMETRO
@@ -48,7 +47,9 @@ case "$1" in
 		#done
 		# -----------
 		
-		gpg --fingerprint
+		mihuella=$(gpg --fingerprint $millave | grep "Huella de clave" | cut -c 25-74)
+		echo "$mihuella" | xclip -selection c
+		
 		echo "Pegar la huella digital que has copiado en la caja de texto Fingerprint,"
 		echo "a continuación, haga clic en el botón Import Key. Launchpad utilizará la huella"
 		echo "digital para comprobar su llave en el servidor de llaves de Ubuntu, y si tiene"
@@ -91,7 +92,6 @@ case "$1" in
 
 		ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
 		cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
-
 		echo "ir a launchpan.net y utilizar ctrl + v para pegar la llave ssh en el campo correspondiente"
 
 #-------------
