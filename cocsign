@@ -67,13 +67,15 @@ case "$1" in
 		echo "4.- Al abrir el enlace se mostrara una pagina con una gran caja de texto"
 		echo "solicitandote un texto firmado. Copie el texto de confirmacion que aparece"
 		echo "en esa pagina el cual es algo similar a esto:"
+		
+		#-------------
+		
 		echo "Please register 056439CD2486190A2C5A07390E6804DC16E7CB72 to the Launchpad user"
 		echo "Matthew Revell. 2007-01-26 12:50 UTC pegalo en un editor de texto, coloque un"
 		echo "nombre (ejemplo: confirmacion.txt) y guarde en su carpeta personal."
 
 		pause "Presione Enter para continuar"
 
-		#-------------
 
 		read -p "Escriba nombre archivo:" ARCHIVO
 		gpg --clearsign $ARCHIVO
@@ -82,6 +84,8 @@ case "$1" in
 		#	gpg --clearsign $ARCHIVO
 		#done
 		pause "Presione Enter para continuar"
+
+		#-------------
 
 		echo "Firmado el archivo, fijate en tu carpeta personal aparece"
 		echo "un nuevo archivo llamado con una terminacion *.asc, abrir con un editor de"
@@ -95,13 +99,11 @@ case "$1" in
 		pause "Presione Enter para continuar"
 		gpg --clearsign UbuntuCodeofConduct-2.0.txt
 
-#-------------
-
+		echo "Generando llave SSH"
 		ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
+		echo "LLave SSH generada"
 		cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
 		echo "ir a launchpan.net y utilizar ctrl + v para pegar la llave ssh en el campo correspondiente"
-
-#-------------
 		;;
 
 	*)
