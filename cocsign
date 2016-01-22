@@ -3,17 +3,19 @@
 # Licence: GPL-2
 LC_ALL=C
 
+if [[ "$EUID" = "0" ]]; then
+	echo -e "\e[00;31mERROR: NO DEBES SER ROOT\e[00m"
+	exit 1
+fi
+
 function pause() {
 	read -p "$*"
 }
 
 case "$1" in
 	instalar)
-		echo "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse" > /etc/apt/sources.list
-		echo "deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list
-		echo "deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list
-		sudo apt -q update
-		sudo apt -q install gnupg wget gedit xclip zenity
+		sudo echo -e "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse""\n""deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse""\n""deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" > /etc/apt/sources.list
+		sudo apt -q update && apt -q install gnupg wget gedit xclip zenity
 		echo "Finalizado..."
 		;;
 
@@ -49,13 +51,13 @@ case "$1" in
 		
 		mihuella=$(gpg --fingerprint $millave | grep "Huella de clave" | cut -c 25-74)
 		echo "$mihuella" | xclip -selection c
-
 		
-		
+		echo "Su huella ya esta en el portapapeles. Siga las instrucciones a continuacion:"
+		echo "Abrir Launchpad"
 		echo "Pegar la huella digital que has copiado en la caja de texto Fingerprint,"
 		echo "a continuación, haga clic en el botón Import Key. Launchpad utilizará la huella"
 		echo "digital para comprobar su llave en el servidor de llaves de Ubuntu, y si tiene"
-		echo "éxito, te enviará un correo electrónico."
+		echo "éxito, le sera enviado un correo electrónico."
 		echo "Una ves importada la llave revise su correo ya que launchpad te envio un mensaje,"
 		echo "has click en el enlace que esta luego del texto: Please go here to finish adding"
 		echo "the key to your Launchpad account:"
