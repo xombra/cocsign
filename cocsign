@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Made by Eduardo Echeverria, Hector Mantellini, Jesus Palencia
 # Licence: GPL-2
-
 LC_ALL=C
 
 function pause() {
@@ -21,11 +20,10 @@ case "$1" in
 	iniciar)
 		echo -e "\e[00;31mScript para firmar el código de conducta de UBUNTU\e[00m"
 		if ! [[ -f "$HOME"/UbuntuCodeofConduct-2.0.txt ]]; then
-			echo "Descargando codigo de conducta 2.0"
+			echo "Descargando codigo de conducta"
 			wget -q -O "$HOME"/UbuntuCodeofConduct-2.0.txt - https://launchpad.net/codeofconduct/2.0/+download
 		fi
 		echo "Generando llave"
-		
 		echo 'Key-Type: 1' > /tmp/genkey
 		echo 'Key-Length: 2048' >> /tmp/genkey
 		echo 'Subkey-Type: 1' >> /tmp/genkey
@@ -38,17 +36,18 @@ case "$1" in
 		rm -f /tmp/genkey
 		rm -f /tmp/listo
 		echo "Llave Generada"
-		
-		echo "Listando las llaves generadas"
-		# exportar la llave generada ej: D8FC66D2 
 		export GPGKEY=$millave
 		gpg --send-keys --keyserver keyserver.ubuntu.com $millave
+		echo "Se envio al keyserver de Ubuntu la siguiente llave: $millave"
+
 		
 		# -----------
 		#while [ $? != 0 ]; do
 		#	read -p "Escriba clave:" PARAMETRO
 		#	gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO
 		#done
+		# -----------
+		
 		gpg --fingerprint
 		echo "Pegar la huella digital que has copiado en la caja de texto Fingerprint,"
 		echo "a continuación, haga clic en el botón Import Key. Launchpad utilizará la huella"
