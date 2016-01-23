@@ -16,7 +16,7 @@ case "$1" in
 	instalar)
 		sudo echo -e "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse""\n""deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse""\n""deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" > /etc/apt/sources.list
 		sudo apt -q update && apt -qy install gnupg wget gedit xclip zenity
-		echo "Finalizado..."
+		echo "Instalacion finalizada..."
 		;;
 
 	iniciar)
@@ -41,14 +41,6 @@ case "$1" in
 		export GPGKEY=$millave
 		gpg --send-keys --keyserver keyserver.ubuntu.com $millave
 		echo "Se envio al keyserver de Ubuntu la siguiente llave: $millave"
-
-		# -----------
-		#while [ $? != 0 ]; do
-		#	read -p "Escriba clave:" PARAMETRO
-		#	gpg --send-keys --keyserver keyserver.ubuntu.com $PARAMETRO
-		#done
-		# -----------
-		
 		mihuella=$(gpg --fingerprint $millave | grep "Huella de clave" | cut -c 25-74)
 		echo "$mihuella" | xclip -selection c
 		
@@ -68,7 +60,11 @@ case "$1" in
 		echo "solicitandote un texto firmado. Copie el texto de confirmacion que aparece"
 		echo "en esa pagina el cual es algo similar a esto:"
 		
-		#-------------
+		# hay que cambiar el mensaje 
+		
+		gpg --decrypt "$HOME"/correo.gpg > /tmp/descifrado
+		decrypt=$(cat /tmp/descifrado | grep https | awk '{print $1}')
+		firefox $decrypt
 		
 		echo "Please register 056439CD2486190A2C5A07390E6804DC16E7CB72 to the Launchpad user"
 		echo "Matthew Revell. 2007-01-26 12:50 UTC pegalo en un editor de texto, coloque un"
