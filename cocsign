@@ -25,9 +25,9 @@ case "$1" in
 		if ! [[ -f "$HOME"/"$nombre" ]]; then
 			echo "Descargando codigo de conducta."
 			wget -q -O "$HOME"/"$nombre" - https://launchpad.net/codeofconduct/2.0/+download
-			echo "Descargan finalizada."
+			echo "Descarga finalizada."
 		fi
-		echo "Generando llave GPG."
+		echo "Generando llave GPG"
 		echo 'Key-Type: 1' > /tmp/genkey
 		echo 'Key-Length: 2048' >> /tmp/genkey
 		echo 'Subkey-Type: 1' >> /tmp/genkey
@@ -68,18 +68,18 @@ case "$1" in
 		pause "Presione Enter para continuar."
 		echo "Se firmara el codigo de conducta."
 		gpg --clearsign "$HOME"/"$nombre"
-		echo "El codigo de conducta firmado ha sido firmado."
+		echo "El codigo de conducta ha sido firmado."
 		cat "$HOME"/"$nombre".asc | xclip -selection c
 		rm -f /tmp/descifrado
 		rm -f "$HOME"/correo.gpg
 		echo "Vaya a launchpad.net y presione ctrl + v para pegar el contenido del codigo de conducta ya firmado."
 		pause "Presione Enter para continuar."
 
-		echo "Generando llave SSH."
+		echo "Generando llave SSH"
 		ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
 		echo "LLave SSH generada."
 		cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
-		echo "Ir a launchpan.net y utilizar ctrl + v para pegar la llave ssh en el campo correspondiente."
+		echo "Ir a launchpad.net y utilizar ctrl + v para pegar la llave ssh en el campo correspondiente."
 		echo "Finalizado..."
 		;;
 
