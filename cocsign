@@ -8,6 +8,7 @@ function pause() {
 	read -p "$*"
 }
 clear
+
 case "$1" in
 	instalar)
 		if [[ "$EUID" != "0" ]]; then
@@ -15,7 +16,8 @@ case "$1" in
 			exit 1
 		fi
 		echo -e "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse""\n""deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse""\n""deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" > /etc/apt/sources.list
-		apt -q update && apt -qy install gnupg wget gedit xclip
+		apt -q update
+		apt -qy install gnupg wget gedit xclip beep
 		echo "Instalacion finalizada..."
 		;;
 
@@ -24,14 +26,14 @@ case "$1" in
 			echo -e "\e[00;31mERROR: NO DEBES SER ROOT\e[00m"
 			exit 1
 		fi
-		rm -f /tmp/genkey
-		rm -f /tmp/listo
-		rm -f /tmp/descifrado
-		rm -f "$HOME"/correo.gpg
 		if ! [[ -f /usr/bin/xclip ]]; then
 			echo "Debe ejecutar la instalacion antes de continuar."
 			exit 1
 		fi
+		rm -f /tmp/genkey
+		rm -f /tmp/listo
+		rm -f /tmp/descifrado
+		rm -f "$HOME"/correo.gpg
 		if ! [[ -f "$HOME"/"$minombre" ]]; then
 			echo "Descargando codigo de conducta."
 			wget -v -O "$HOME"/"$minombre" https://launchpad.net/codeofconduct/2.0/+download
@@ -52,9 +54,7 @@ case "$1" in
 		rm -f /tmp/genkey
 		rm -f /tmp/listo
 		echo ""
-
-agregar beep
-
+		beep -r 3
 		echo "Llave GPG Generada."
 		export GPGKEY=$millave
 		gpg --send-keys --keyserver keyserver.ubuntu.com $millave
@@ -64,38 +64,55 @@ agregar beep
 		echo "$mihuella" | xclip -selection c
 		echo ""
 		echo ""
-		echo "Su huella ya esta en el portapapeles. Siga las instrucciones a continuacion:"
-		echo "1.- Abrir Launchpad.net en su navegador favorito"
-		echo "2.- Pegar la huella digital que has copiado en la caja de texto Fingerprint,"
-		echo "(use ctrl-v)"	
-		echo "a continuación, haga clic en el botón Import Key. Launchpad.net utilizará la huella"
-		echo "digital para comprobar su llave en el servidor de llaves de Ubuntu, y si tiene"
-		echo "éxito, le sera enviado un correo electrónico."
+		echo "Su huella esta almacenada temporalmente en el portapapeles."
+		echo "Siga las instrucciones a continuacion:"
 		echo ""
-		echo "3.- Revise su correo ya que launchpad.net le enviara un mensaje,"
-		echo "copie el texto entre los bloques pgp y pegue dicho texto"
-		echo "en el bloc de notas"
-		echo "luego guarde el texto con el nombre correo.gpg en su directorio /home"
-		echo ""		
+		echo "1.- Abrir Launchpad.net en su navegador favorito y loguearse"
+		echo ""
+		echo "2.- Ir a firmar codigo de conducta"
+		echo ""
+		echo "3.- Registrar su nueva llave, en el campo fingerprint pegue lo que esta en el portapapeles (ctrl + v)"
+		echo "Presione el boton [Import Key]"
+		echo ""
+		echo "4.- Una vez realizada la accion anterior se le enviara un correo de confirmacion"
+		echo ""
+		echo "5.- Abra el correo que dice en el asunto: Launchpad: Confirm your OpenPGP Key"
+		echo "Copie el texto en el bloque gpg y peguelo en el bloc de notas, luego guardelo en su directorio /home/SU_USUARIO con el nombre correo.gpg"
+		echo ""
+		echo "6.- Luego presione Enter en la pantalla de la consola, donde se ejecuta el script"
+		echo "se abrira una ventana del navegador por default donde hara clic en confirmar"
+		echo ""
+		echo "7.- Vaya de nuevo a firmar Codigo de Conducta y seleccione la opcion: 3 Sign it! (Firmar)"
+		echo ""
+		echo "8.- Pegue el contenido del portapapeles y presione continuar"
+		echo ""
 		pause "Presione Enter para continuar."
 		gpg --decrypt "$HOME"/correo.gpg > /tmp/descifrado
 		decrypt=$(cat /tmp/descifrado | grep https: | awk '{print $1}')
 		firefox $decrypt
 		pause "Presione Enter para continuar."
+		echo ""
 		echo "Se firmara el codigo de conducta."
 		gpg --clearsign "$HOME"/"$minombre"
 		echo "El codigo de conducta ha sido firmado."
+		echo ""
 		cat "$HOME"/"$minombre".asc | xclip -selection c
 		rm -f /tmp/descifrado
 		rm -f "$HOME"/correo.gpg
+		echo ""
 		echo "Vaya a launchpad.net y presione ctrl + v para pegar el contenido del codigo de conducta ya firmado."
 		pause "Presione Enter para continuar."
-
+		echo ""
 		echo "Generando llave SSH"
 		ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
+		echo ""
 		echo "LLave SSH generada."
 		cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
-		echo "Ir a launchpad.net y utilizar ctrl + v para pegar la llave ssh en el campo correspondiente."
+		echo ""
+		echo "Su llave SSH  esta almacenada temporalmente en el portapapeles."
+		echo "1.- Vaya a launchpad.net y haga clic en: ssh keys"
+		echo "2.- Pegue (ctrl + v) el contenido del portapapeles y presione: importar public key"
+		pause "Presione Enter para continuar."
 		echo "Finalizado..."
 		;;
 
