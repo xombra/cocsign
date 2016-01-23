@@ -8,6 +8,7 @@ function pause() {
 	read -p "$*"
 }
 
+clear
 case "$1" in
 	instalar)
 		if [[ "$EUID" != "0" ]]; then
