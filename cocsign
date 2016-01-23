@@ -111,14 +111,17 @@ case "$1" in
 		cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
 		echo ""
 		echo "Su llave SSH  esta almacenada temporalmente en el portapapeles."
+		echo ""
 		echo "1.- Vaya a launchpad.net y haga clic en: ssh keys"
+		echo ""
 		echo "2.- Pegue (ctrl + v) el contenido del portapapeles y presione: importar public key"
 		pause "Presione Enter para continuar."
+		echo ""
 		echo "Finalizado..."
 		;;
 
 	*)
-            	echo "USO: $(basename $0) {instalar|iniciar} nombre apellido tu@correo.com"
+            	echo "USO: $(basename $0) {instalar|iniciar} nombre apellido sudireccion@correo.com"
 		;;
 
 esac
