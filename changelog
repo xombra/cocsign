@@ -1,4 +1,16 @@
-commit 12d452582d45216e1b9175fc648a48724364e01f (HEAD, tag: v0.3.1, origin/master, origin/HEAD, master)
+commit 544d3a0233fe33532b7507836e563efc11cad9fe (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jan 23 19:17:49 2016 -0430
+
+    * se comienza a agregar colores
+
+commit 489be1c0c8777709396a9b8ece816b2aeca3820e
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jan 23 19:07:26 2016 -0430
+
+    * changelog
+
+commit 12d452582d45216e1b9175fc648a48724364e01f (tag: v0.3.1)
 Author: Jose Perez <sinfallas@users.noreply.github.com>
 Date:   Sat Jan 23 18:58:36 2016 +0000
 
