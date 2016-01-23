@@ -1,4 +1,16 @@
-commit 2dd2ffec8fae7045c28b22cef371cc0a5ef16d66 (HEAD, origin/master, origin/HEAD, master)
+commit d2f81bd355e2323c97254001cbcf8874cb2c4e32 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 21:43:01 2016 -0430
+
+    * se cambia la informacion de derecho de autor
+
+commit 53e9fe681acdc1ba76cb33600679c0ba9666a1f6
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 21:41:32 2016 -0430
+
+    * changelog
+
+commit 2dd2ffec8fae7045c28b22cef371cc0a5ef16d66
 Author: jose perez <sinfallas@gmail.com>
 Date:   Fri Jan 22 21:41:10 2016 -0430
 
