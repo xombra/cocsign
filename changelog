@@ -1,4 +1,64 @@
-commit 19c0f4ca1026cba44a4fd1e56658a49a8787ad71 (HEAD, origin/master, origin/HEAD, master)
+commit e9605747a85841ff01777f163cd333367c6d6d60 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 20:19:35 2016 -0430
+
+    * se crea el archivo TODO
+
+commit 3e318ebb909734958b37ccc42dc8024a817b5715
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 22 21:04:28 2016 +0000
+
+    * cambios en los mensajes que ve el usuario
+
+commit 8a5c26262dc27ff0a7ef468dc19aae6a0d173d81
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 22 20:57:20 2016 +0000
+
+    * cambios en texto explicativos
+
+commit 81f987ed2dd5c489ce6842dab69fc32f832d74b6
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 22 20:51:32 2016 +0000
+
+    * se coloca comprobacion de root y se mejoran los echo
+
+commit d8e071664f021e12fde2250241f0a3982c80f0e8
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 22 20:42:53 2016 +0000
+
+    * se agrega una pausa
+
+commit b476a7a1fc9e9fc181ee1f7e2bb748d32834ae07
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 22 20:41:49 2016 +0000
+
+    * se cptura la huella de la llave y se copia al portapapeles
+
+commit cfcde0f9a6e5655726657330a0ce9e55ecfc89fb
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 22 20:34:01 2016 +0000
+
+    * limpieza
+
+commit 093bad62be50101483253f453538dd78810a9491
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 22 20:27:59 2016 +0000
+
+    * se captura el identificador de la llave y se envia al servidor de ubuntu
+
+commit 5b7a3a17df22c10e9fc0db29fbecf0f2175dcdef
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Fri Jan 22 20:10:51 2016 +0000
+
+    * se agregan repositorios y el paquete zenity como dependencia
+
+commit f07418c7ad4a72071f28f45e8eb27cb5377354eb
+Author: jose perez <sinfallas@gmail.com>
+Date:   Wed Jan 20 19:15:15 2016 -0430
+
+    * changelog
+
+commit 19c0f4ca1026cba44a4fd1e56658a49a8787ad71
 Author: jose perez <sinfallas@gmail.com>
 Date:   Wed Jan 20 19:13:02 2016 -0430
 
