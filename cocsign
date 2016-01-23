@@ -25,9 +25,13 @@ case "$1" in
 		rm -f /tmp/listo
 		rm -f /tmp/descifrado
 		rm -f "$HOME"/correo.gpg
+		if ! [[ -f /usr/bin/xclip ]]; then
+			echo "Debe ejecutar la instalacion antes de continuar."
+			exit 1
+		fi
 		if ! [[ -f "$HOME"/"$nombre" ]]; then
 			echo "Descargando codigo de conducta."
-			wget -v -O "$HOME"/"$nombre" - https://launchpad.net/codeofconduct/2.0/+download
+			wget -v -O "$HOME"/"$nombre" https://launchpad.net/codeofconduct/2.0/+download
 			echo "Descarga finalizada."
 		fi
 		echo "Generando llave GPG"
