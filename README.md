@@ -10,3 +10,9 @@ Basado en código de Eduardo Echeverria <echevemaster@gmail.com>
 
 * Hector Mantellini <xombra.com@gmail.com>
 * Jesus Palencia
+
+uso:
+
+```bash
+cocsign instalar|iniciar nombre apellido tu@correo.com
+```
