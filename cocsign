@@ -8,6 +8,7 @@ if [[ "$EUID" = "0" ]]; then
 	exit 1
 fi
 
+nombre="UbuntuCodeofConduct-2.0.txt"
 function pause() {
 	read -p "$*"
 }
@@ -21,9 +22,9 @@ case "$1" in
 
 	iniciar)
 		echo -e "\e[00;31mScript para firmar el código de conducta de UBUNTU\e[00m"
-		if ! [[ -f "$HOME"/UbuntuCodeofConduct-2.0.txt ]]; then
+		if ! [[ -f "$HOME"/"$nombre" ]]; then
 			echo "Descargando codigo de conducta"
-			wget -q -O "$HOME"/UbuntuCodeofConduct-2.0.txt - https://launchpad.net/codeofconduct/2.0/+download
+			wget -q -O "$HOME"/"$nombre" - https://launchpad.net/codeofconduct/2.0/+download
 		fi
 		echo "Generando llave"
 		echo 'Key-Type: 1' > /tmp/genkey
@@ -65,41 +66,21 @@ case "$1" in
 		gpg --decrypt "$HOME"/correo.gpg > /tmp/descifrado
 		decrypt=$(cat /tmp/descifrado | grep https | awk '{print $1}')
 		firefox $decrypt
-		
-		echo "Please register 056439CD2486190A2C5A07390E6804DC16E7CB72 to the Launchpad user"
-		echo "Matthew Revell. 2007-01-26 12:50 UTC pegalo en un editor de texto, coloque un"
-		echo "nombre (ejemplo: confirmacion.txt) y guarde en su carpeta personal."
-
+		echo "Se firmara el codigo de conducta"
+		gpg --clearsign "$HOME"/"$nombre"
+		echo "El codigo de conducta firmado ha sido firmado"
+		cat "$HOME"/"$nombre".asc | xclip -selection c
+		rm -f /tmp/descifrado
+		rm -f "$HOME"/correo.gpg
+		echo "Vaya a launchpad.net y presione ctrl + v para pegar el contenido del codigo de conducta ya firmado"
 		pause "Presione Enter para continuar"
-
-
-		read -p "Escriba nombre archivo:" ARCHIVO
-		gpg --clearsign $ARCHIVO
-		#while [ $? != 0 ]; do
-		#	read -p "Escriba nombre archivo:" ARCHIVO
-		#	gpg --clearsign $ARCHIVO
-		#done
-		pause "Presione Enter para continuar"
-
-		#-------------
-
-		echo "Firmado el archivo, fijate en tu carpeta personal aparece"
-		echo "un nuevo archivo llamado con una terminacion *.asc, abrir con un editor de"
-		echo "texto, copia y pega el contenido en la caja de texto de la pagina que abristes"
-		echo "con el enlace que te llego por correo y dale Continue."
-		echo "Ya con esto has agregado y confirmado tu llave GPG, ahora podemos pasar a firmar"
-		echo "el codigo de conducta. Firmando el Codigo de Conducta lo primero que hiciste al"
-		echo "comenzar con este script fue leer y descargar el Codigo De Conducta, por lo que"
-		echo "procederemos a firmarlo."
-
-		pause "Presione Enter para continuar"
-		gpg --clearsign UbuntuCodeofConduct-2.0.txt
 
 		echo "Generando llave SSH"
 		ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
 		echo "LLave SSH generada"
 		cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
-		echo "ir a launchpan.net y utilizar ctrl + v para pegar la llave ssh en el campo correspondiente"
+		echo "Ir a launchpan.net y utilizar ctrl + v para pegar la llave ssh en el campo correspondiente"
+		echo "Finalizado..."
 		;;
 
 	*)
