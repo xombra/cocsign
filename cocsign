@@ -53,19 +53,18 @@ case "$1" in
 		echo "digital para comprobar su llave en el servidor de llaves de Ubuntu, y si tiene"
 		echo "éxito, le sera enviado un correo electrónico."
 		echo ""
-		echo "3.- Una ves importada la llave revise su correo ya que launchpad.net le enviara un mensaje,"
-		echo "haga click en el enlace que le indica dentro del correo, se encuentra luego del texto:"
-		echo "Please go here to finish adding"
-		echo "the key to your Launchpad account:"
-		echo "4.- Al abrir el enlace se mostrara una pagina con una gran caja de texto"
-		echo "solicitandote un texto firmado. Copie el texto de confirmacion que aparece"
-		echo "en esa pagina el cual es algo similar a esto:"
-		
+		echo "3.- Revise su correo ya que launchpad.net le enviara un mensaje,"
+		echo "copie el texto entre los bloques pgp y pegue dicho texto"
+		echo "en el bloc de notas"
+		echo "luego guarde el texto con el nombre correo.gpg en su directorio /home"
+		pause "Presione Enter para continuar"
+
 		# hay que cambiar el mensaje 
 		
 		gpg --decrypt "$HOME"/correo.gpg > /tmp/descifrado
-		decrypt=$(cat /tmp/descifrado | grep https | awk '{print $1}')
+		decrypt=$(cat /tmp/descifrado | grep https: | awk '{print $1}')
 		firefox $decrypt
+		pause "Presione Enter para continuar"
 		echo "Se firmara el codigo de conducta"
 		gpg --clearsign "$HOME"/"$nombre"
 		echo "El codigo de conducta firmado ha sido firmado"
