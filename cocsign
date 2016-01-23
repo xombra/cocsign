@@ -23,10 +23,11 @@ case "$1" in
 	iniciar)
 		echo -e "\e[00;31mScript para firmar el código de conducta de UBUNTU\e[00m"
 		if ! [[ -f "$HOME"/"$nombre" ]]; then
-			echo "Descargando codigo de conducta"
+			echo "Descargando codigo de conducta."
 			wget -q -O "$HOME"/"$nombre" - https://launchpad.net/codeofconduct/2.0/+download
+			echo "Descargan finalizada."
 		fi
-		echo "Generando llave"
+		echo "Generando llave GPG."
 		echo 'Key-Type: 1' > /tmp/genkey
 		echo 'Key-Length: 2048' >> /tmp/genkey
 		echo 'Subkey-Type: 1' >> /tmp/genkey
@@ -38,7 +39,7 @@ case "$1" in
 		millave=$(cat /tmp/listo | grep "gpg: clave" | uniq | awk '{print $3}')
 		rm -f /tmp/genkey
 		rm -f /tmp/listo
-		echo "Llave Generada"
+		echo "Llave GPG Generada."
 		export GPGKEY=$millave
 		gpg --send-keys --keyserver keyserver.ubuntu.com $millave
 		echo "Se envio al keyserver de Ubuntu la siguiente llave: $millave"
@@ -57,28 +58,28 @@ case "$1" in
 		echo "copie el texto entre los bloques pgp y pegue dicho texto"
 		echo "en el bloc de notas"
 		echo "luego guarde el texto con el nombre correo.gpg en su directorio /home"
-		pause "Presione Enter para continuar"
+		pause "Presione Enter para continuar."
 
 		# hay que cambiar el mensaje 
 		
 		gpg --decrypt "$HOME"/correo.gpg > /tmp/descifrado
 		decrypt=$(cat /tmp/descifrado | grep https: | awk '{print $1}')
 		firefox $decrypt
-		pause "Presione Enter para continuar"
-		echo "Se firmara el codigo de conducta"
+		pause "Presione Enter para continuar."
+		echo "Se firmara el codigo de conducta."
 		gpg --clearsign "$HOME"/"$nombre"
-		echo "El codigo de conducta firmado ha sido firmado"
+		echo "El codigo de conducta firmado ha sido firmado."
 		cat "$HOME"/"$nombre".asc | xclip -selection c
 		rm -f /tmp/descifrado
 		rm -f "$HOME"/correo.gpg
-		echo "Vaya a launchpad.net y presione ctrl + v para pegar el contenido del codigo de conducta ya firmado"
-		pause "Presione Enter para continuar"
+		echo "Vaya a launchpad.net y presione ctrl + v para pegar el contenido del codigo de conducta ya firmado."
+		pause "Presione Enter para continuar."
 
-		echo "Generando llave SSH"
+		echo "Generando llave SSH."
 		ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
-		echo "LLave SSH generada"
+		echo "LLave SSH generada."
 		cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
-		echo "Ir a launchpan.net y utilizar ctrl + v para pegar la llave ssh en el campo correspondiente"
+		echo "Ir a launchpan.net y utilizar ctrl + v para pegar la llave ssh en el campo correspondiente."
 		echo "Finalizado..."
 		;;
 
