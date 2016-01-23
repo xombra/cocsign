@@ -7,10 +7,10 @@ minombre="UbuntuCodeofConduct-2.0.txt"
 function pause() {
 	read -p "$*"
 }
-clear
 
 case "$1" in
 	instalar)
+		clear
 		if [[ "$EUID" != "0" ]]; then
 			echo -e "\e[00;31mERROR: DEBES SER ROOT\e[00m"
 			exit 1
@@ -22,6 +22,7 @@ case "$1" in
 		;;
 
 	iniciar)
+		clear
 		if [[ "$EUID" = "0" ]]; then
 			echo -e "\e[00;31mERROR: NO DEBES SER ROOT\e[00m"
 			exit 1
