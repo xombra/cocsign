@@ -1,4 +1,16 @@
-commit fc57a307cd129ed05d7e10bb2646a558abbb054f (HEAD, origin/master, origin/HEAD, master)
+commit cc008b26cc97846c713ab3bffa52c12fabbc0f78 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 21:59:31 2016 -0430
+
+    * se actualiza el archivo readme.md
+
+commit dee3f95662d33d88d80dbd0378f59c6498bd1c89
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 21:51:10 2016 -0430
+
+    * changelog
+
+commit fc57a307cd129ed05d7e10bb2646a558abbb054f
 Author: jose perez <sinfallas@gmail.com>
 Date:   Fri Jan 22 21:51:01 2016 -0430
 
