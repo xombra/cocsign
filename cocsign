@@ -8,7 +8,7 @@ if [[ "$EUID" = "0" ]]; then
 	exit 1
 fi
 
-nombre="UbuntuCodeofConduct-2.0.txt"
+minombre="UbuntuCodeofConduct-2.0.txt"
 function pause() {
 	read -p "$*"
 }
@@ -29,9 +29,9 @@ case "$1" in
 			echo "Debe ejecutar la instalacion antes de continuar."
 			exit 1
 		fi
-		if ! [[ -f "$HOME"/"$nombre" ]]; then
+		if ! [[ -f "$HOME"/"$minombre" ]]; then
 			echo "Descargando codigo de conducta."
-			wget -v -O "$HOME"/"$nombre" https://launchpad.net/codeofconduct/2.0/+download
+			wget -v -O "$HOME"/"$minombre" https://launchpad.net/codeofconduct/2.0/+download
 			echo "Descarga finalizada."
 		fi
 		echo "Generando llave GPG"
@@ -74,9 +74,9 @@ case "$1" in
 		firefox $decrypt
 		pause "Presione Enter para continuar."
 		echo "Se firmara el codigo de conducta."
-		gpg --clearsign "$HOME"/"$nombre"
+		gpg --clearsign "$HOME"/"$minombre"
 		echo "El codigo de conducta ha sido firmado."
-		cat "$HOME"/"$nombre".asc | xclip -selection c
+		cat "$HOME"/"$minombre".asc | xclip -selection c
 		rm -f /tmp/descifrado
 		rm -f "$HOME"/correo.gpg
 		echo "Vaya a launchpad.net y presione ctrl + v para pegar el contenido del codigo de conducta ya firmado."
