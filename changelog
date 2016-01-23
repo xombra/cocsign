@@ -1,4 +1,16 @@
-commit 0778a842c46f2ed2f5d2beaecb164eba9f79d58c (HEAD, origin/master, origin/HEAD, master)
+commit 1aa397b57bc2c3bd112c3f3aaed6c3e3710e4544 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 21:45:57 2016 -0430
+
+    * se elimina zenity como paquete a instalar
+
+commit 542ae55cf58031146dcf8a5b1f10789110e12a66
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 21:44:15 2016 -0430
+
+    * changelog
+
+commit 0778a842c46f2ed2f5d2beaecb164eba9f79d58c
 Author: jose perez <sinfallas@gmail.com>
 Date:   Fri Jan 22 21:43:57 2016 -0430
 
