@@ -1,4 +1,82 @@
-commit cc008b26cc97846c713ab3bffa52c12fabbc0f78 (HEAD, origin/master, origin/HEAD, master)
+commit 12d452582d45216e1b9175fc648a48724364e01f (HEAD, tag: v0.3.1, origin/master, origin/HEAD, master)
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 18:58:36 2016 +0000
+
+    * se corrigen las variables posicionales
+
+commit 105b4dead0981a620b1f9c1f22ecab04abeaf309 (tag: v0.3)
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 18:55:01 2016 +0000
+
+    * se modifican los mensajes
+
+commit 4e964137ddb7301d0af21b518666cdd8628cbac4
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 18:53:23 2016 +0000
+
+    * correcciones en los mensajes
+
+commit cb8468de5f4bad3136f3495824579ced7562750a
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 18:50:23 2016 +0000
+
+    * clear
+
+commit d12ebc5379b4811c7f058b90951c8a8664fe7e80
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 18:49:32 2016 +0000
+
+    * bugfix
+
+commit 8de0f65834b842b744ed4edd6a2e469ebcbea349
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 18:39:25 2016 +0000
+
+    * se corrigen los mensajes y se optimiza el ritmo de uso
+
+commit 4060313bed6eda6441577fafca64d95079f8461a
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 17:46:33 2016 +0000
+
+    * correciones varias
+
+commit 31cd106b196ff0fd9996ef5647c014144cd91cc6
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 17:19:26 2016 +0000
+
+    * se limpia
+
+commit d515ef91214f3d0587b31d30775bceca4dea4bfc
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 16:49:35 2016 +0000
+
+    * bugfix
+
+commit d4ad2c4f1824932283a8fb89d425668eb3269f13
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 12:03:00 2016 -0430
+
+    * bugfix
+
+commit cbdb41bca7af085a83bb2fd92163b04d32a545cf
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 12:01:45 2016 -0430
+
+    * bugfix
+
+commit f44d57ca218d9b042fa1a34506b7523244836814
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 11:53:44 2016 -0430
+
+    * se elimina el mensaje de bienvenida
+
+commit 935bda5e7575f08e8f3a59cdddc8e75220f4dfe2 (tag: v0.2.2)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 21:59:55 2016 -0430
+
+    * changelog
+
+commit cc008b26cc97846c713ab3bffa52c12fabbc0f78
 Author: jose perez <sinfallas@gmail.com>
 Date:   Fri Jan 22 21:59:31 2016 -0430
 
@@ -16,7 +94,7 @@ Date:   Fri Jan 22 21:51:01 2016 -0430
 
     * bugfix
 
-commit 831bbc6fa87400f7b68aaf20813994263e56b862
+commit 831bbc6fa87400f7b68aaf20813994263e56b862 (tag: v0.2.1)
 Author: jose perez <sinfallas@gmail.com>
 Date:   Fri Jan 22 21:46:18 2016 -0430
 
