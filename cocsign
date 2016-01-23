@@ -50,7 +50,7 @@ case "$1" in
 		echo "1.- Abrir Launchpad.net en su navegador favorito"
 		echo "2.- Pegar la huella digital que has copiado en la caja de texto Fingerprint,"
 		echo "(use ctrl-v)"	
-		echo "a continuación, haga clic en el botón Import Key. Launchpad,net utilizará la huella"
+		echo "a continuación, haga clic en el botón Import Key. Launchpad.net utilizará la huella"
 		echo "digital para comprobar su llave en el servidor de llaves de Ubuntu, y si tiene"
 		echo "éxito, le sera enviado un correo electrónico."
 		echo ""
