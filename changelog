@@ -1,4 +1,40 @@
-commit e9605747a85841ff01777f163cd333367c6d6d60 (HEAD, origin/master, origin/HEAD, master)
+commit e67589609db6237e45af823c56092357327f0aa8 (HEAD, tag: v0.2, origin/master, origin/HEAD, master)
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 02:04:38 2016 +0000
+
+    * bugfix
+
+commit 61f5491edbc68222b5ba581952dc027b39136d67
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 02:01:46 2016 +0000
+
+    * se cambia el mensaje y se corrigen errores
+
+commit 957180dd9f42d3e135287bfe4130c57d379bc97b
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 01:56:10 2016 +0000
+
+    * ultimos cambios
+
+commit 890a01e68aabe4cb7c122b54e354a752e511cf04
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 01:43:55 2016 +0000
+
+    * se descrifa el correo
+
+commit 267f818bbdc5574201f8036cf18f613304ee357d
+Author: Jose Perez <sinfallas@users.noreply.github.com>
+Date:   Sat Jan 23 01:13:37 2016 +0000
+
+    * se corrige apt
+
+commit 619afa9d46c4ee67c48232ead9ecd0143031b25d
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 20:20:14 2016 -0430
+
+    * changelog
+
+commit e9605747a85841ff01777f163cd333367c6d6d60
 Author: jose perez <sinfallas@gmail.com>
 Date:   Fri Jan 22 20:19:35 2016 -0430
 
