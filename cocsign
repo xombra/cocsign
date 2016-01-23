@@ -21,10 +21,13 @@ case "$1" in
 		;;
 
 	iniciar)
-		echo -e "\e[00;31mScript para firmar el código de conducta de UBUNTU\e[00m"
+		rm -f /tmp/genkey
+		rm -f /tmp/listo
+		rm -f /tmp/descifrado
+		rm -f "$HOME"/correo.gpg
 		if ! [[ -f "$HOME"/"$nombre" ]]; then
 			echo "Descargando codigo de conducta."
-			wget -q -O "$HOME"/"$nombre" - https://launchpad.net/codeofconduct/2.0/+download
+			wget -v -O "$HOME"/"$nombre" - https://launchpad.net/codeofconduct/2.0/+download
 			echo "Descarga finalizada."
 		fi
 		echo "Generando llave GPG"
