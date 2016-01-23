@@ -12,23 +12,23 @@ case "$1" in
 	instalar)
 		clear
 		if [[ "$EUID" != "0" ]]; then
-			echo -e "\e[00;31mERROR: DEBES SER ROOT\e[00m"
+			echo -e "\e[00;31mERROR: DEBES SER ROOT.\e[00m"
 			exit 1
 		fi
 		echo -e "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse""\n""deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse""\n""deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" > /etc/apt/sources.list
 		apt -q update
 		apt -qy install gnupg wget gedit xclip beep
-		echo "Instalacion finalizada..."
+		echo -e "\e[00;1;92mInstalacion finalizada...\e[00m"
 		;;
 
 	iniciar)
 		clear
 		if [[ "$EUID" = "0" ]]; then
-			echo -e "\e[00;31mERROR: NO DEBES SER ROOT\e[00m"
+			echo -e "\e[00;31mERROR: NO DEBES SER ROOT.\e[00m"
 			exit 1
 		fi
 		if ! [[ -f /usr/bin/xclip ]]; then
-			echo "Debe ejecutar la instalacion antes de continuar."
+			echo -e "\e[00;31mDebe ejecutar la instalacion antes de continuar.\e[00m"
 			exit 1
 		fi
 		rm -f /tmp/genkey
