@@ -16,7 +16,7 @@ function pause() {
 case "$1" in
 	instalar)
 		sudo echo -e "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse""\n""deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse""\n""deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" > /etc/apt/sources.list
-		sudo apt -q update && apt -qy install gnupg wget gedit xclip zenity
+		sudo apt -q update && apt -qy install gnupg wget gedit xclip
 		echo "Instalacion finalizada..."
 		;;
 
