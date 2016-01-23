@@ -73,15 +73,15 @@ case "$1" in
 		echo "2.- Ir a firmar codigo de conducta"
 		echo ""
 		echo "3.- Registrar su nueva llave, en el campo fingerprint pegue lo que esta en el portapapeles (ctrl + v)"
-		echo "Presione el boton [Import Key]"
+		echo "    presione el boton [Import Key]"
 		echo ""
 		echo "4.- Una vez realizada la accion anterior se le enviara un correo de confirmacion"
 		echo ""
 		echo "5.- Abra el correo que dice en el asunto: Launchpad: Confirm your OpenPGP Key"
-		echo "Copie el texto en el bloque gpg y peguelo en el bloc de notas, luego guardelo en su directorio /home/SU_USUARIO con el nombre correo.gpg"
+		echo "    copie el texto en el bloque gpg y peguelo en el bloc de notas, luego guardelo en su directorio /home/SU_USUARIO con el nombre correo.gpg"
 		echo ""
 		echo "6.- Luego presione Enter en la pantalla de la consola, donde se ejecuta el script"
-		echo "se abrira una ventana del navegador por default donde hara clic en confirmar"
+		echo "    se abrira una ventana del navegador por default donde hara clic en confirmar"
 		echo ""
 		echo "7.- Vaya de nuevo a firmar Codigo de Conducta y seleccione la opcion: 3 Sign it! (Firmar)"
 		echo ""
@@ -95,8 +95,8 @@ case "$1" in
 		echo ""
 		echo "Se firmara el codigo de conducta."
 		gpg --clearsign "$HOME"/"$minombre"
-		echo "El codigo de conducta ha sido firmado."
 		echo ""
+		echo "El codigo de conducta ha sido firmado."
 		cat "$HOME"/"$minombre".asc | xclip -selection c
 		rm -f /tmp/descifrado
 		rm -f "$HOME"/correo.gpg
