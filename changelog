@@ -1,4 +1,16 @@
-commit cb616acceda2440eeab3f5e2cffb447db1f1474e (HEAD, origin/master, origin/HEAD, master)
+commit 2dd2ffec8fae7045c28b22cef371cc0a5ef16d66 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 21:41:10 2016 -0430
+
+    * se elimina el archivo todo
+
+commit 07b879637ee6d9541e6b51fed242601af794df0a
+Author: jose perez <sinfallas@gmail.com>
+Date:   Fri Jan 22 21:40:33 2016 -0430
+
+    * changelog
+
+commit cb616acceda2440eeab3f5e2cffb447db1f1474e
 Author: jose perez <sinfallas@gmail.com>
 Date:   Fri Jan 22 21:40:16 2016 -0430
 
