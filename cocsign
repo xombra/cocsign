@@ -12,19 +12,21 @@ case "$1" in
 	instalar)
 		clear
 		if [[ "$EUID" != "0" ]]; then
-			echo -e "\e[00;31mERROR: DEBES SER ROOT.\e[00m"
+			echo -e "\e[00;31mERROR: Debe ser root.\e[00m"
 			exit 1
 		fi
+		cp /etc/apt/sources.list /etc/apt/sources.list.old
 		echo -e "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse""\n""deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse""\n""deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" > /etc/apt/sources.list
 		apt -q update
 		apt -qy install gnupg wget gedit xclip beep
+		mv -f /etc/apt/sources.list.old /etc/apt/sources.list
 		echo -e "\e[00;1;92mInstalacion finalizada...\e[00m"
 		;;
 
 	iniciar)
 		clear
 		if [[ "$EUID" = "0" ]]; then
-			echo -e "\e[00;31mERROR: NO DEBES SER ROOT.\e[00m"
+			echo -e "\e[00;31mERROR: No debe ser root.\e[00m"
 			exit 1
 		fi
 		if ! [[ -f /usr/bin/xclip ]]; then
@@ -36,13 +38,13 @@ case "$1" in
 		rm -f /tmp/descifrado
 		rm -f "$HOME"/correo.gpg
 		if ! [[ -f "$HOME"/"$minombre" ]]; then
-			echo "Descargando codigo de conducta."
+			echo -e "\e[00;1;92mDescargando codigo de conducta.\e[00m"
 			wget -v -O "$HOME"/"$minombre" https://launchpad.net/codeofconduct/2.0/+download
 			echo ""
-			echo "Descarga finalizada."
+			echo -e "\e[00;1;92mDescarga finalizada.\e[00m"
 		fi
 		echo ""
-		echo "Generando llave GPG"
+		echo -e "\e[00;1;92mGenerando llave GPG\e[00m"
 		echo 'Key-Type: 1' > /tmp/genkey
 		echo 'Key-Length: 2048' >> /tmp/genkey
 		echo 'Subkey-Type: 1' >> /tmp/genkey
@@ -52,15 +54,15 @@ case "$1" in
 		echo 'Expire-Date: 2y' >> /tmp/genkey
 		script -q /dev/stdout -c 'gpg --batch --gen-key /tmp/genkey' | tee /tmp/listo
 		millave=$(cat /tmp/listo | grep "gpg: clave" | uniq | awk '{print $3}')
+		export GPGKEY=$millave
 		rm -f /tmp/genkey
 		rm -f /tmp/listo
-		echo ""
 		beep -r 3
-		echo "Llave GPG Generada."
-		export GPGKEY=$millave
+		echo ""
+		echo -e "\e[00;1;92mLlave GPG Generada.\e[00m"
 		gpg --send-keys --keyserver keyserver.ubuntu.com $millave
 		echo ""
-		echo "Se envio al keyserver de Ubuntu la siguiente llave: $millave"
+		echo -e "\e[00;1;92mSe envio al keyserver de Ubuntu la siguiente llave: $millave\e[00m"
 		mihuella=$(gpg --fingerprint $millave | grep "Huella de clave" | cut -c 25-74)
 		echo "$mihuella" | xclip -selection c
 		echo ""
@@ -93,10 +95,10 @@ case "$1" in
 		firefox $decrypt
 		pause "Presione Enter para continuar."
 		echo ""
-		echo "Se firmara el codigo de conducta."
+		echo -e "\e[00;1;92mSe firmara el codigo de conducta.\e[00m"
 		gpg --clearsign "$HOME"/"$minombre"
 		echo ""
-		echo "El codigo de conducta ha sido firmado."
+		echo -e "\e[00;1;92mEl codigo de conducta ha sido firmado.\e[00m"
 		cat "$HOME"/"$minombre".asc | xclip -selection c
 		rm -f /tmp/descifrado
 		rm -f "$HOME"/correo.gpg
@@ -104,10 +106,10 @@ case "$1" in
 		echo "Vaya a launchpad.net y presione ctrl + v para pegar el contenido del codigo de conducta ya firmado."
 		pause "Presione Enter para continuar."
 		echo ""
-		echo "Generando llave SSH"
+		echo -e "\e[00;1;92mGenerando llave SSH\e[00m"
 		ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
 		echo ""
-		echo "LLave SSH generada."
+		echo -e "\e[00;1;92mLLave SSH generada.\e[00m"
 		cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
 		echo ""
 		echo "Su llave SSH  esta almacenada temporalmente en el portapapeles."
@@ -117,7 +119,7 @@ case "$1" in
 		echo "2.- Pegue (ctrl + v) el contenido del portapapeles y presione: importar public key"
 		pause "Presione Enter para continuar."
 		echo ""
-		echo "Finalizado..."
+		echo -e "\e[00;1;92mFinalizado...\e[00m"
 		;;
 
 	*)
