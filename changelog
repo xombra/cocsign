@@ -1,4 +1,18 @@
-commit 544d3a0233fe33532b7507836e563efc11cad9fe (HEAD, origin/master, origin/HEAD, master)
+commit ee7f76199398282a5a085afcfa2a146afe755140 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jan 23 19:36:41 2016 -0430
+
+    * se termina de colocar los colores
+    * se crea copia de seguridad de sources.list
+    * se modifican algunos mensajes
+
+commit f10a4b5ee7f9513e213338ce08b8fe0b3f720e1e
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jan 23 19:18:08 2016 -0430
+
+    * changelog
+
+commit 544d3a0233fe33532b7507836e563efc11cad9fe
 Author: jose perez <sinfallas@gmail.com>
 Date:   Sat Jan 23 19:17:49 2016 -0430
 
