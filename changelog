@@ -1,4 +1,17 @@
-commit ee7f76199398282a5a085afcfa2a146afe755140 (HEAD, origin/master, origin/HEAD, master)
+commit 9b1b08b54788e2bcbe630d8cac66571adc03d5a7 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jan 23 19:41:19 2016 -0430
+
+    * cambios en los autores
+    * se crea el archivo thanks
+
+commit 76c06beec5e222381d748464f5c66916ebe15dd0
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jan 23 19:38:11 2016 -0430
+
+    * changelog
+
+commit ee7f76199398282a5a085afcfa2a146afe755140
 Author: jose perez <sinfallas@gmail.com>
 Date:   Sat Jan 23 19:36:41 2016 -0430
 
