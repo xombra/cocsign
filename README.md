@@ -8,8 +8,8 @@ Basado en código de Eduardo Echeverria <echevemaster@gmail.com>
 
 ## Modificaciones / Correcciones / Optimizaciones
 
+* Jesus Palencia <sinfallas@gmail.com>
 * Hector Mantellini <xombra.com@gmail.com>
-* Jesus Palencia
 
 uso:
 

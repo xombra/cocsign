@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Made by Eduardo Echeverria, Hector Mantellini, Jesus Palencia
+# Made by Jesus Palencia, Hector Mantellini
 # Licence: GPL-2
 LC_ALL=C
 minombre="UbuntuCodeofConduct-2.0.txt"
