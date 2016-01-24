@@ -1,4 +1,22 @@
-commit 9b1b08b54788e2bcbe630d8cac66571adc03d5a7 (HEAD, origin/master, origin/HEAD, master)
+commit f57582ea10e600eeaa158193d1c83507cc15e511 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jan 23 19:47:29 2016 -0430
+
+    * zenodo doi
+
+commit d893215a73e2417b4ef1e33c4abcd3f16e568869
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jan 23 19:42:38 2016 -0430
+
+    * se actualiza el archivo readme.md
+
+commit b50eb3a71ce0dd94151f0fd262791c69644c362a
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jan 23 19:41:48 2016 -0430
+
+    * changelog
+
+commit 9b1b08b54788e2bcbe630d8cac66571adc03d5a7
 Author: jose perez <sinfallas@gmail.com>
 Date:   Sat Jan 23 19:41:19 2016 -0430
 
