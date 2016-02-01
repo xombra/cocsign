@@ -1,10 +1,23 @@
-commit f57582ea10e600eeaa158193d1c83507cc15e511 (HEAD, origin/master, origin/HEAD, master)
+commit af5cd03a4db0625dfca8f69b36ac4608a3ebf565 (HEAD, origin/master, origin/HEAD, master)
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sun Jan 31 22:41:50 2016 -0430
+
+    * se crea la funcion check para alojar las comprobaciones
+    * se separa la creacion de la llave ssh de la creacion de la llave gpg
+
+commit 9a01e3306c16df99a614ce4500f19e33af020f4f
+Author: jose perez <sinfallas@gmail.com>
+Date:   Sat Jan 23 19:47:45 2016 -0430
+
+    * changelog
+
+commit f57582ea10e600eeaa158193d1c83507cc15e511
 Author: jose perez <sinfallas@gmail.com>
 Date:   Sat Jan 23 19:47:29 2016 -0430
 
     * zenodo doi
 
-commit d893215a73e2417b4ef1e33c4abcd3f16e568869
+commit d893215a73e2417b4ef1e33c4abcd3f16e568869 (tag: v0.3.2)
 Author: jose perez <sinfallas@gmail.com>
 Date:   Sat Jan 23 19:42:38 2016 -0430
 
