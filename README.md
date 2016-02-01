@@ -16,5 +16,5 @@ Basado en código de Eduardo Echeverria <echevemaster@gmail.com>
 uso:
 
 ```bash
-cocsign instalar|iniciar nombre apellido tu@correo.com
+cocsign instalar|gpg|ssh nombre apellido tu@correo.com
 ```
