@@ -8,6 +8,19 @@ function pause() {
 	read -p "$*"
 }
 
+
+function check () {
+	clear
+	if [[ "$EUID" = "0" ]]; then
+		echo -e "\e[00;31mERROR: No debe ser root.\e[00m"
+		exit 1
+	fi
+	if ! [[ -f /usr/bin/xclip ]]; then
+		echo -e "\e[00;31mDebe ejecutar la instalacion antes de continuar.\e[00m"
+		exit 1
+	fi
+}
+
 case "$1" in
 	instalar)
 		clear
@@ -18,21 +31,13 @@ case "$1" in
 		cp /etc/apt/sources.list /etc/apt/sources.list.old
 		echo -e "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted universe multiverse""\n""deb http://security.ubuntu.com/ubuntu/ trusty-security main restricted universe multiverse""\n""deb http://archive.ubuntu.com/ubuntu/ trusty-updates main restricted universe multiverse" > /etc/apt/sources.list
 		apt -q update
-		apt -qy install gnupg wget gedit xclip beep
+		apt -qy install gnupg wget xclip beep
 		mv -f /etc/apt/sources.list.old /etc/apt/sources.list
 		echo -e "\e[00;1;92mInstalacion finalizada...\e[00m"
 		;;
 
-	iniciar)
-		clear
-		if [[ "$EUID" = "0" ]]; then
-			echo -e "\e[00;31mERROR: No debe ser root.\e[00m"
-			exit 1
-		fi
-		if ! [[ -f /usr/bin/xclip ]]; then
-			echo -e "\e[00;31mDebe ejecutar la instalacion antes de continuar.\e[00m"
-			exit 1
-		fi
+	gpg)
+		check
 		rm -f /tmp/genkey
 		rm -f /tmp/listo
 		rm -f /tmp/descifrado
@@ -70,24 +75,24 @@ case "$1" in
 		echo "Su huella esta almacenada temporalmente en el portapapeles."
 		echo "Siga las instrucciones a continuacion:"
 		echo ""
-		echo "1.- Abrir Launchpad.net en su navegador favorito y loguearse"
+		echo "1.- Abrir Launchpad.net en su navegador favorito y loguearse."
 		echo ""
-		echo "2.- Ir a firmar codigo de conducta"
+		echo "2.- Ir a firmar codigo de conducta."
 		echo ""
 		echo "3.- Registrar su nueva llave, en el campo fingerprint pegue lo que esta en el portapapeles (ctrl + v)"
 		echo "    presione el boton [Import Key]"
 		echo ""
-		echo "4.- Una vez realizada la accion anterior se le enviara un correo de confirmacion"
+		echo "4.- Una vez realizada la accion anterior se le enviara un correo de confirmacion."
 		echo ""
 		echo "5.- Abra el correo que dice en el asunto: Launchpad: Confirm your OpenPGP Key"
 		echo "    copie el texto en el bloque gpg y peguelo en el bloc de notas, luego guardelo en su directorio /home/SU_USUARIO con el nombre correo.gpg"
 		echo ""
 		echo "6.- Luego presione Enter en la pantalla de la consola, donde se ejecuta el script"
-		echo "    se abrira una ventana del navegador por default donde hara clic en confirmar"
+		echo "    se abrira una ventana del navegador por default donde hara clic en confirmar."
 		echo ""
 		echo "7.- Vaya de nuevo a firmar Codigo de Conducta y seleccione la opcion: 3 Sign it! (Firmar)"
 		echo ""
-		echo "8.- Pegue el contenido del portapapeles y presione continuar"
+		echo "8.- Pegue el contenido del portapapeles y presione continuar."
 		echo ""
 		pause "Presione Enter para continuar."
 		gpg --decrypt "$HOME"/correo.gpg > /tmp/descifrado
@@ -104,8 +109,12 @@ case "$1" in
 		rm -f "$HOME"/correo.gpg
 		echo ""
 		echo "Vaya a launchpad.net y presione ctrl + v para pegar el contenido del codigo de conducta ya firmado."
-		pause "Presione Enter para continuar."
 		echo ""
+		echo -e "\e[00;1;92mFinalizado...\e[00m"
+		;;
+
+	ssh)
+		check
 		echo -e "\e[00;1;92mGenerando llave SSH\e[00m"
 		ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
 		echo ""
@@ -117,13 +126,12 @@ case "$1" in
 		echo "1.- Vaya a launchpad.net y haga clic en: ssh keys"
 		echo ""
 		echo "2.- Pegue (ctrl + v) el contenido del portapapeles y presione: importar public key"
-		pause "Presione Enter para continuar."
 		echo ""
 		echo -e "\e[00;1;92mFinalizado...\e[00m"
 		;;
 
 	*)
-            	echo "USO: $(basename $0) {instalar|iniciar} nombre apellido sudireccion@correo.com"
+            	echo "USO: $(basename $0) {instalar|gpg|ssh} nombre apellido sudireccion@correo.com"
 		;;
 
 esac
