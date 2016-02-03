@@ -119,7 +119,8 @@ case "$1" in
 		ssh-keygen -b 1024 -t rsa -f "$HOME"/.ssh/id_rsa -N ''
 		echo ""
 		echo -e "\e[00;1;92mLLave SSH generada.\e[00m"
-		cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
+		# cat "$HOME"/.ssh/id_rsa.pub | xclip -selection c
+		xclip -sel clip < ~/.ssh/id_rsa.pub
 		echo ""
 		echo "Su llave SSH  esta almacenada temporalmente en el portapapeles."
 		echo ""
